@@ -1,9 +1,7 @@
-// src/ThreeScene.tsx
-
 "use client";
 
-import React, { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import React, { useEffect, useRef } from "react";
+import * as THREE from "three";
 
 const Cube: React.FC = () => {
   const mountRef = useRef<HTMLDivElement | null>(null);
@@ -38,7 +36,7 @@ const Cube: React.FC = () => {
         // Render the scene
         renderer.render(scene, camera);
       };
-      
+
       animate();
 
       // Handle window resizing
@@ -48,11 +46,11 @@ const Cube: React.FC = () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
       };
 
-      window.addEventListener('resize', handleResize);
+      window.addEventListener("resize", handleResize);
 
       // Cleanup on component unmount
       return () => {
-        window.removeEventListener('resize', handleResize);
+        window.removeEventListener("resize", handleResize);
         renderer.dispose();
       };
     }
