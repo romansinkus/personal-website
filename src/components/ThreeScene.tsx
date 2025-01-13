@@ -2,8 +2,8 @@
 
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"; // Import OrbitControls
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 const ThreeScene: React.FC = () => {
   const mountRef = useRef<HTMLDivElement | null>(null);
@@ -39,7 +39,10 @@ const ThreeScene: React.FC = () => {
         const model = gltf.scene;
         model.scale.set(1, 1, 1); // Scale the model if necessary
         model.position.set(0, 0, 0); // Position the model in the scene
+        console.log("model", model);
+        console.log("scene before adding model", scene);
         scene.add(model);
+        console.log("scene after adding model", scene);
       });
 
       // Set up camera position
@@ -57,12 +60,11 @@ const ThreeScene: React.FC = () => {
         requestAnimationFrame(animate);
 
         // If the model is loaded, animate it
-        if (scene.children.length > 0) {
-          scene.children[0].rotation.x += 0.01;
-          scene.children[0].rotation.y += 0.01;
+        if (scene.children[2] != null) {
+          scene.children[2].rotation.x += 0.01;
+          scene.children[2].rotation.y += 0.01;
         }
 
-        controls.update(); // Update controls
         renderer.render(scene, camera);
       };
 

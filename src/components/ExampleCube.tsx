@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-const Cube: React.FC = () => {
+const ExampleCube: React.FC = () => {
   const mountRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -59,4 +59,4 @@ const Cube: React.FC = () => {
   return <div ref={mountRef} />;
 };
 
-export default Cube;
+export default ExampleCube;
