@@ -23,12 +23,12 @@ import Typing from "@/components/Typing";
 // }
 
 export default function Home() {
-  const handleScrollToNext = () => {
-    const nextSection = document.getElementById("section-2");
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the next section
-    }
-  };
+  // const handleScrollToNext = () => {
+  //   const nextSection = document.getElementById("section-2");
+  //   if (nextSection) {
+  //     nextSection.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the next section
+  //   }
+  // };
  
   return (
     <div>

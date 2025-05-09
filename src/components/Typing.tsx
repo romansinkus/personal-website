@@ -12,8 +12,9 @@ const Typing: React.FC = () => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [speed, setSpeed] = useState(100); // Typing speed
-  
+//   const [speed, setSpeed] = useState(100); // Typing speed
+  const speed = 100;
+
   useEffect(() => {
     const currentPhrase = phrases[currentPhraseIndex];
 
